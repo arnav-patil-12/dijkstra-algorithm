@@ -32,14 +32,14 @@ def set_edges(graph):
     Prompts user to enter start and end vertex labels and edge weight. Entering '.'
     in start vertex will return program
     """
-    weight = 0
+    weight = 1
     while weight != 0:
-        weight = input("Enter edge weight (0 to finish): ")
+        weight = int(input("Enter edge weight (0 to finish): "))
         if weight == 0:
             return
         else:
-            start = str(input("Enter start vertex label: "))
-            end = str(input("Enter end vertex label: "))
+            start = int(input("Enter start vertex INDEX: "))
+            end = int(input("Enter end vertex INDEX: "))
             graph.add_edge(start, end, weight)
     return
 
@@ -51,8 +51,8 @@ def execute_dijkstra(graph):
     Prompts user for starting point, and prints the shortest path from
     the starting vertex to each other vertex in the graph.
     """
-    start = str(input("Enter start vertex: "))
-    print(f"Dijkstra's Algorithm starting from vertex {start}:")
+    start = str(input("Enter LABEL of starting point: "))
+    print(f"Dijkstra's Algorithm starting from vertex INDEX {start}:")
     distances = graph.dijkstra(start)
     for i, d in enumerate(distances):
         print(f"Distance from {start} to {graph.vertex_data[i]}: {d}")
