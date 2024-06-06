@@ -40,6 +40,8 @@ class Graph:
 
         return distances
 
+
+"""
 g = Graph(7)
 
 g.add_vertex_data(0, 'A')
@@ -65,4 +67,4 @@ g.add_edge(6, 5, 5)  # G - F, weight 5
 print("Dijkstra's Algorithm starting from vertex D:")
 distances = g.dijkstra('D')
 for i, d in enumerate(distances):
-    print(f"Distance from D to {g.vertex_data[i]}: {d}")
+    print(f"Distance from D to {g.vertex_data[i]}: {d}")"""
