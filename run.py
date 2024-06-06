@@ -16,12 +16,13 @@ def label_graph(graph):
     (Graph) -> None
 
     Prompts user to enter vertex labels to construct graph.
+    Stores each label as a string.
     Prints each vertex label and its corresponding index to the output.
     """
     for i in range(graph.size):
-        vertex_label = str(input("Enter vertex label: "))
+        vertex_label = str(input(f"Enter vertex label for INDEX {i}: "))
         graph.add_vertex_data(i, vertex_label)
-        print(f"Vertex label: {vertex_label}, index: {i}")
+    print("\n")
     return
 
 
@@ -29,8 +30,8 @@ def set_edges(graph):
     """
     (Graph) -> None
 
-    Prompts user to enter start and end vertex labels and edge weight. Entering '.'
-    in start vertex will return program
+    Prompts user to enter start and end vertex INDICES and edge weights. Entering '.'
+    in start vertex prompt will finish and return program.
     """
     weight = 1
     while weight != 0:
@@ -41,6 +42,7 @@ def set_edges(graph):
             start = int(input("Enter start vertex INDEX: "))
             end = int(input("Enter end vertex INDEX: "))
             graph.add_edge(start, end, weight)
+            print("\n")
     return
 
 

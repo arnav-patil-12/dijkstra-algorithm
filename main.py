@@ -2,6 +2,7 @@ import run
 
 # Create a graph with the desired size.
 size = int(input("Enter desired number of vertices: "))
+print("\n")
 my_graph = run.create_graph(size)
 
 # Label each vertex in the graph, use letters by convention.
