@@ -42,6 +42,10 @@ class Graph:
 
 
 """
+
+Uncomment and run this file you want to see the code in action without the hassle
+of inputting everything manually.
+
 g = Graph(7)
 
 g.add_vertex_data(0, 'A')
