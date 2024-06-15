@@ -23,4 +23,4 @@ NOTE: This version of the algorithm does not provide the shortest path from the 
 
 ## Complexity of Dijkstra's Algorithm
 
-This algorithm has a worst-case time complexity of $O(n^2)$
+This algorithm has a worst-case time complexity of $O(n^2)$. That can be broken down as $n$ vertices, giving complexity $O(n)$, each being connected (in the worst case) to each other, meaning $n^2$ distances must be calculated. Thus, we get a time complexity of $O(n^2)$.
