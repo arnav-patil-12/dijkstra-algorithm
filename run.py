@@ -59,3 +59,18 @@ def execute_dijkstra(graph):
     for i, d in enumerate(distances):
         print(f"Distance from {start} to {graph.vertex_data[i]}: {d}")
     return
+
+
+def print_paths(graph):
+    """
+    (Graph) -> None
+
+    Prompts user to enter starting vertex LABEL and prints
+    shortest distance from starting vertex to each other vertex in the graph.
+    """
+    start = str(input("Enter LABEL of starting point: "))
+    distances, predecessors = graph.dijkstra('D')
+    for i, d in enumerate(distances):
+        path = graph.get_path(predecessors, start, graph.vertex_data[i])
+        print(f"{path}, Distance: {d}")
+    return

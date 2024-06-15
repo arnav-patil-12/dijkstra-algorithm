@@ -16,6 +16,7 @@ class Graph:
     def dijkstra(self, start_vertex_data):
         start_vertex = self.vertex_data.index(start_vertex_data)
         distances = [float('inf')] * self.size
+        predecessors = [None] * self.size
         distances[start_vertex] = 0
         visited = [False] * self.size
 
@@ -37,8 +38,20 @@ class Graph:
                     alt = distances[u] + self.adj_matrix[u][v]
                     if alt < distances[v]:
                         distances[v] = alt
+                        predecessors[v] = u
 
-        return distances
+        return distances, predecessors
+
+    def get_path(self, predecessors, start_vertex, end_vertex):
+        path = []
+        current = self.vertex_data.index(end_vertex)
+        while current != None:
+            path.insert(0, self.vertex_data[current])
+            current = predecessors[current]
+            if current == self.vertex_data.index(start_vertex):
+                path.insert(0, start_vertex)
+                break
+        return '->'.join(path)
 
 
 """
