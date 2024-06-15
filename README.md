@@ -19,6 +19,8 @@ With that being said, let's dive right into the algorithm and code it in Python.
 > 5. Repeat steps 2-4 to choose a new current vertex until all vertices are visited.
 > 6. We are left with the shortest path from the source to each vertex.
 
-NOTE: This version of the algorithm does not provide the shortest path from the source to a given vertex, only the shortest distance from a given point to every other point on the graph. However, we will add this functionality to our code later.
+NOTE: This version of the algorithm does not provide the shortest path from the source to a given vertex, only the shortest distance from a given point to every other point on the graph. However, with a bit of coding, we can add this functionality by adding a ```path``` attribute, which updates a list with the previously visited nodes when the shortest distance is updated as well.
 
-TO BE ADDED: example run-through (same as w3), python code documentation, updates?
+## Complexity of Dijkstra's Algorithm
+
+This algorithm has a worst-case time complexity of $O(n^2)$
